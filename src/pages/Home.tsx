@@ -158,7 +158,7 @@ const Home = () => {
               </Button>
             </Link>
             <a 
-              href="https://t.me/jobfiti_ai_bot" 
+              href="https://t.me/Hustle_coach_bot" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full"
