@@ -27,7 +27,7 @@ const WebChat = () => {
     setResponse("");
 
     try {
-      const apiResponse = await fetch("https://jobfiti-backend.YOUR-REPL-USERNAME.repl.co/chat", {
+      const apiResponse = await fetch("https://3409423d-8b4d-4b7f-9663-08c0bdcdb375-00-3t8ovtzb6twnw.kirk.replit.dev/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

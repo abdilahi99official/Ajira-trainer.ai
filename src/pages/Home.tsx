@@ -154,7 +154,7 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-md mx-auto">
             <Link to="/webchat" className="w-full">
               <Button size="lg" className="w-full cta-btn text-lg py-6 hover:scale-105 transition-transform">
-                💬 Use on Website
+                💬 Chat on web
               </Button>
             </Link>
             <a 
@@ -168,7 +168,7 @@ const Home = () => {
                 variant="outline"
                 className="w-full telegram-btn text-lg py-6 bg-telegram text-telegram-foreground border-telegram hover:bg-telegram/90 hover:scale-105 transition-transform"
               >
-                📱 Use on Telegram
+                📱 Chat on Telegram
               </Button>
             </a>
           </div>
@@ -177,7 +177,7 @@ const Home = () => {
         {/* Footer */}
         <footer className="text-center text-muted-foreground">
           <p className="text-sm">
-            Built for the <span className="font-semibold">Vibe 2.0 Hackathon – 2025</span> 🇰🇪
+            Built by <a href="https://github.com/abdilahi99official">@abdilahi99official</a> for the <span className="font-semibold">Vibe 2.0 Hackathon – 2025</span> 🇰🇪
           </p>
         </footer>
       </div>
