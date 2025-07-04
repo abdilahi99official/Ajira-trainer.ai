@@ -4,6 +4,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { MessageCircle, Brain, Sparkles, ArrowLeft, Send, Lightbulb, Users } from "lucide-react";
+import laptopWorkImage from "@/assets/laptop-work.jpg";
 
 const WebChat = () => {
   const [input, setInput] = useState("");
@@ -70,48 +72,71 @@ const WebChat = () => {
     <div className="min-h-screen bg-gradient-to-br from-background via-card to-secondary">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="text-center mb-8">
-          <Link to="/" className="inline-block mb-4">
-            <h1 className="text-4xl font-bold text-primary hover:text-primary/80 transition-colors">
-              JobFit AI
-            </h1>
+        <div className="text-center mb-8 relative">
+          <div className="absolute inset-0 -z-10 opacity-10">
+            <img 
+              src={laptopWorkImage} 
+              alt="Professional workspace" 
+              className="w-full h-full object-cover rounded-3xl"
+            />
+          </div>
+          
+          <Link to="/" className="inline-block mb-4 hover:scale-105 transition-transform">
+            <div className="flex items-center justify-center gap-3">
+              <MessageCircle className="w-8 h-8 text-primary animate-pulse" />
+              <h1 className="text-4xl font-bold text-primary hover:text-primary/80 transition-colors">
+                JobFit AI
+              </h1>
+              <Brain className="w-8 h-8 text-accent animate-pulse" />
+            </div>
           </Link>
-          <h2 className="text-2xl font-semibold text-foreground mb-2">
-            Chat with JobFit AI 💬
-          </h2>
+          
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <Sparkles className="w-6 h-6 text-accent animate-pulse" />
+            <h2 className="text-2xl font-semibold text-foreground">
+              Chat with JobFit AI 💬🤖
+            </h2>
+            <Sparkles className="w-6 h-6 text-accent animate-pulse" />
+          </div>
           <p className="text-muted-foreground">
-            Ask me anything about job searching, CVs, interviews, or career tips!
+            Ask me anything about job searching 🔍, CVs 📄, interviews 🗣️, or career tips! 🚀
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-6">
           {/* Input Section */}
-          <Card className="shadow-lg">
+          <Card className="shadow-lg border-primary/20">
             <CardHeader>
-              <CardTitle className="text-xl text-foreground">
-                What would you like help with today? 🤔
-              </CardTitle>
+              <div className="flex items-center justify-center gap-2">
+                <Lightbulb className="w-6 h-6 text-accent animate-pulse" />
+                <CardTitle className="text-xl text-foreground">
+                  What career challenge can I help you with today? 🤔💼
+                </CardTitle>
+                <Users className="w-6 h-6 text-primary animate-pulse" />
+              </div>
             </CardHeader>
             <CardContent className="space-y-4">
               <Textarea
-                placeholder="Example: How can I make my CV stand out for entry-level positions in Nairobi?"
+                placeholder="💭 Example: How can I make my CV stand out for entry-level tech positions in Nairobi? What skills should I highlight as a fresh graduate? 🎓"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
-                className="min-h-[120px] text-base"
+                className="min-h-[120px] text-base border-muted focus:border-primary"
                 disabled={isLoading}
               />
               <div className="flex gap-4">
                 <Button 
                   onClick={handleSubmit} 
                   disabled={isLoading}
-                  className="flex-1 sm:flex-none cta-btn text-lg py-3 hover:scale-105 transition-transform"
+                  className="flex-1 sm:flex-none cta-btn text-lg py-3 hover:scale-105 transition-transform flex items-center gap-2"
                 >
-                  {isLoading ? "Getting AI Tips..." : "Get Tip 🚀"}
+                  <Send className="w-5 h-5" />
+                  {isLoading ? "🤖 Getting AI Tips..." : "Get Career Tip 🚀💡"}
                 </Button>
                 <Link to="/">
-                  <Button variant="outline" className="py-3">
-                    ← Back to Home
+                  <Button variant="outline" className="py-3 flex items-center gap-2 hover:bg-secondary">
+                    <ArrowLeft className="w-4 h-4" />
+                    Back to Home
                   </Button>
                 </Link>
               </div>
@@ -151,27 +176,35 @@ const WebChat = () => {
 
           {/* Sample Questions */}
           {!response && !isLoading && (
-            <Card className="shadow-lg">
+            <Card className="shadow-lg border-accent/20">
               <CardHeader>
-                <CardTitle className="text-lg text-foreground">
-                  💡 Try asking about:
-                </CardTitle>
+                <div className="flex items-center justify-center gap-2">
+                  <Brain className="w-6 h-6 text-accent" />
+                  <CardTitle className="text-lg text-foreground">
+                    💡 Popular Questions from Kenyan Youth 🇰🇪
+                  </CardTitle>
+                  <Sparkles className="w-6 h-6 text-primary" />
+                </div>
               </CardHeader>
               <CardContent>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
-                    "How to write a compelling cover letter for tech jobs",
-                    "Common interview questions for fresh graduates",
-                    "How to highlight skills when I have no work experience",
-                    "Tips for networking in the Kenyan job market"
+                    "📝 How to write a compelling cover letter for tech jobs in Kenya",
+                    "🗣️ Common interview questions for fresh graduates in Nairobi", 
+                    "💪 How to highlight skills when I have no work experience",
+                    "🤝 Tips for networking in the Kenyan job market",
+                    "💼 Best industries for entry-level jobs in Kenya",
+                    "🎯 How to prepare for virtual interviews",
+                    "📈 Skills that are in high demand in Kenya right now",
+                    "⭐ How to make my LinkedIn profile stand out to recruiters"
                   ].map((question, index) => (
                     <Button
                       key={index}
                       variant="outline"
-                      className="text-left h-auto p-3 text-wrap justify-start hover:bg-primary/10"
-                      onClick={() => setInput(question)}
+                      className="text-left h-auto p-3 text-wrap justify-start hover:bg-primary/10 hover:scale-105 transition-all border-muted"
+                      onClick={() => setInput(question.replace(/^[^\s]+\s/, ""))} // Remove emoji from input
                     >
-                      "{question}"
+                      <span className="text-sm">{question}</span>
                     </Button>
                   ))}
                 </div>
