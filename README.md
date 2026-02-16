@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/3e7441e8-3303-43c5-9fa0-988bdad468d0
+**URL**: https://jobfit-kenya-spark.lovable.app
 
 ## How can I edit this code?
 
